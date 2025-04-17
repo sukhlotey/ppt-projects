@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Reveal.js Slides with Background Colors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/reveal.js/dist/theme/black.css"
+      id="theme"
+    />
+    <style>
+      h2{
+        font-size: 50px !important;
+      }
+      h3{
+        font-size: 35px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background-color="#ff595e">
+          <h2>Guru Nanak Dev Engineering College</h2>
+          <p>Sukhpreet Singh</p>
+        </section>
+        <section data-background-color="#ffca3a">
+          <h2>Projects</h2>
+          <ol>
+            <li>Mentor Mentee</li>
+            <li>TODO GNDEC System</li>
+          </ol>
+        </section>
+        <section data-background-color="#8ac926">
+          <h2>Technologies</h2>
+          <ol>
+            <li>Frappe</li>
+            <li>Python</li>
+            <li>Javascript</li>
+            <li>Bootstrap</li>
+            <li>HTML</li>
+            <li>Jinja</li>
+          </ol>
+        </section>
+        <!-- first -->
+        <section data-background-color="#1982c4">
+          <section>
+            <h1>Mentor Mentee</h1>
+          </section>
+          <section>
+            <h2>Project Overview</h2>
+            <h3>Key Features</h3>
+            <ul>
+              <li>Search and display instructors and students</li>
+              <li>View detailed instructor-student group assignments</li>
+              <li>Theme switching (ligh, dark, automatic)</li>
+              <li>Pagination and dynamic data loading</li>
+            </ul>
+          </section>
+          <section>
+            <h2>System Architecture</h2>
+            <h3><b>Frontend</b></h3>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Frappe Framework</li>
+            </ul>
+            <ol>
+              <li>Responsive UI with Bootstrap for layout</li>
+              <li>Dynamic rendering of intsructor and student lists</li>
+              <li>Theme switcher for user customization</li>
+            </ol>
+            <h3><b>Backend</b></h3>
+            <ul>
+              <li>Python (Frappe Framework)</li>
+            </ul>
+            <ol>
+              <li>Handles data retrieval and processing</li>
+              <li>Whitelisted API for secure data access</li>
+            </ol>
+            <h3>Database</h3>
+            <ul>
+              <li>MariaDB</li>
+            </ul>
+            <ol>
+              <li>Frappe built-in database (MariaDB)</li>
+            </ol>
+          </section>
+          <section>
+            <h2>Key Functionalities</h2>
+            <h3>Search Functionality</h3>
+            <ul>
+              <li>Real-time search by name for instructors and students.</li>
+              <li>Filters results dynamically using AJAX calls.</li>
+            </ul>
+            <h3>Instructor Details</h3>
+            <ul>
+              <li>
+                Displays assigned student groups and their members with class
+              </li>
+            </ul>
+            <h3>Student Details</h3>
+            <ul>
+              <li>Shows assigned instructors and guardian information.</li>
+              <li>Tooltip with student image and guardian names.</li>
+            </ul>
+            <h3>Pagination</h3>
+            <ul>
+              <li>
+                Load more data with configurable page lengths (20, 100, 500,
+                2500).
+              </li>
+            </ul>
+            <h3>Theme Switching</h3>
+            <li>
+              Light, dark, and automatic modes based on system preferences.
+            </li>
+          </section>
+          <section>
+            <h2>Technical Highlights</h2>
+            <h3>Fontend</h3>
+            <ul>
+              <li>Uses Jinja2 templating for dynamic content</li>
+              <li>
+                Event-driven JavaScript for interactive elements(e.g. Click
+                enevnt, tooltips)
+              </li>
+              <li>CSS for responsive design and theme styling</li>
+            </ul>
+            <h3>Backend</h3>
+            <ul>
+              <li>Python functions (get_context) for data processing.</li>
+              <li>
+                Frappe’s ORM for database queries (e.g., fetching instructors,
+                students, groups).
+              </li>
+              <li>Efficient pagination with offset-based data retrieval.</li>
+            </ul>
+            <h3>Security</h3>
+            <ul>
+              <li>
+                Whitelisted API (@frappe.whitelist) restricts access to
+                authenticated users.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>User Interface</h2>
+            <h3>Layout</h3>
+            <ul>
+              <li>Three-column design: Instructors, Students, Details.</li>
+              <li>Search bar at the top for quick filtering</li>
+              <li>Theme switcher button for user customization</li>
+            </ul>
+            <h3>Ineractivity</h3>
+            <ul>
+              <li>Clickable list items to view details.</li>
+              <li>Tooltips for student images and guardian info.</li>
+              <li>Load more button for pagination.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Implementation Details</h2>
+            <h3>Data Flow</h3>
+            <ul>
+              <li>
+                User inputs search query → Frontend sends AJAX request → Backend
+                processes query → Returns filtered data.
+              </li>
+            </ul>
+            <h3>Key Components</h3>
+            <ul>
+              <li>
+                <b>mentor_mentee.html:</b> Handles UI rendering and client-side
+                logic.
+              </li>
+              <li>
+                <b>mentor_mentee.py:</b> Manages server-side data retrieval and
+                API.
+              </li>
+            </ul>
+            <h3>Dependencies</h3>
+            <ul>
+              <li>Frappe framework for backend and frontend utilities.</li>
+              <li>Bootstrap for styling.</li>
+            </ul>
+            <h3>Challenges</h3>
+            <li>Efficient handling of large datasets with pagination.</li>
+            <li>Dynamic theme switching without page reload.</li>
+          </section>
+          <section>
+            <h2>Benefits and Impact</h2>
+            <ul>
+              <li>
+                <strong>Efficiency</strong>: Simplifies tracking of
+                mentor-mentee assignments.
+              </li>
+              <li>
+                <strong>User Experience</strong>: Intuitive UI with customizable
+                themes and responsive design.
+              </li>
+              <li>
+                <strong>Scalability</strong>: Supports large datasets with
+                pagination and optimized queries.
+              </li>
+              <li>
+                <strong>Educational Value</strong>: Enhances communication and
+                organization in academic settings.
+              </li>
+              <li>
+                <strong>Visuals</strong>: Icon or chart showing improved
+                efficiency (e.g., time saved).
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Conclusion</h2>
+            <h3>Summary</h3>
+            <p>
+              The Mentor Mentee System is a robust, user-friendly platform for
+              managing educational relationships.
+            </p>
+            <h3>Key Takeaways</h3>
+            <ul>
+              <li>Seamless integration of frontend an d backend</li>
+              <li>Scalable and customizable design</li>
+              <li>Potential for further enhancements</li>
+            </ul>
+          </section>
+          <section>
+            <img src="images/mentor-mentee.png" alt="mentor-mentee">
+          </section>
+        </section>
+       <!-- second -->
+        <section data-background-color="#6a4c93">
+          <section><h1>TODO GNDEC System</h1></section>
+          <section>
+            <h2>Project Overview</h2>
+            <h3>Purpose</h3>
+            <ul>
+              <li>
+                Streamlines task assignment and tracking across roles
+                (Principal, HOD, Instructor, Student) in an educational setting.
+              </li>
+            </ul>
+            <h3>Key Features</h3>
+            <ul>
+              <li>Role based task creation and assignments</li>
+              <li>Task status and response updates.(Pending, Completed)</li>
+              <li>Bulk actions (delete, update status)</li>
+              <li>Search, Filters, and sort tasks with pagination</li>
+              <li>Email notifications for task assignments</li>
+            </ul>
+            <h3>Target Users</h3>
+            <ol>
+              <li>Principal</li>
+              <li>HODs</li>
+              <li>Instructors</li>
+              <li>Students</li>
+            </ol>
+          </section>
+          <section>
+            <h2>System Architecture</h2>
+            <h3>Frontend</h3>
+            <ol>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Javascript</li>
+              <li>Frappe framework</li>
+              <li>Bootstrap</li>
+              <li>Jinja</li>
+            </ol>
+            <ul>
+              <li>Responsive UI with modals for task creation and editing.</li>
+              <li>
+                Dynamic table for task listing with sorting and filtering.
+              </li>
+            </ul>
+            <h3>Backend</h3>
+            <ol>
+              <li>Python (Frappe Framework)</li>
+            </ol>
+            <ul>
+              <li>Handles task CRUD operations and role-based logic.</li>
+              <li>Whitelisted APIs for secure data access.</li>
+            </ul>
+            <h3>Database</h3>
+            <ol>
+              <li>Frappe’s built-in database MariaDB</li>
+            </ol>
+          </section>
+          <section>
+            <h2>Key Functionalites</h2>
+            <h3>Role-Based Task Assignment:</h3>
+            <ul>
+              <li><strong>Principal</strong>: Assign tasks to HODs or self.</li>
+              <li>
+                <strong>HOD</strong>: Assign tasks to Instructors or self.
+              </li>
+              <li>
+                <strong>Instructor</strong>: Assign tasks to Students or self.
+              </li>
+              <li><strong>Student</strong>: Create personal tasks for self.</li>
+            </ul>
+
+            <h3>Task Management:</h3>
+            <ul>
+              <li>
+                <strong>Create, edit, delete</strong> tasks with description,
+                status, due date, and priority.
+              </li>
+              <li>
+                <strong>Update task response</strong> (Pending, Completed) by
+                assignees.
+              </li>
+            </ul>
+
+            <h3>Bulk Operations:</h3>
+            <ul>
+              <li>
+                <strong>Bulk Delete/Update</strong>: Delete or update status of
+                multiple tasks.
+              </li>
+            </ul>
+
+            <h3>Interactive Features:</h3>
+            <ul>
+              <li><strong>Search</strong> tasks by description.</li>
+              <li><strong>Filter</strong> by status, response, or assignee.</li>
+              <li>
+                <strong>Sort</strong> by fields (e.g., creation, due date).
+              </li>
+            </ul>
+
+            <h3>Notifications:</h3>
+            <ul>
+              <li>
+                <strong>Email Alerts</strong>: For new or reassigned tasks.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Technical Highlights</h2>
+            <h3>Frontend:</h3>
+            <ul>
+              <li>
+                <strong>Jinja2 Templating</strong>: For dynamic rendering.
+              </li>
+              <li>
+                <strong>JavaScript</strong>: For interactivity (e.g., modals,
+                checkboxes, AJAX calls).
+              </li>
+              <li>
+                <strong>Bootstrap</strong>: For responsive design and modals.
+              </li>
+            </ul>
+
+            <h3>Backend:</h3>
+            <ul>
+              <li>
+                <strong>Python Functions</strong>: <code>get_context</code>,
+                <code>get_todo_list</code>, <code>bulk_update_todos</code> for
+                task management.
+              </li>
+              <li>
+                <strong>Frappe ORM</strong>: For database queries (e.g.,
+                fetching users, tasks).
+              </li>
+              <li>
+                <strong>Role-Based Access Control</strong>: For secure
+                operations.
+              </li>
+            </ul>
+
+            <h3>Security:</h3>
+            <ul>
+              <li><strong>CSRF Tokens</strong>: For form submissions.</li>
+              <li>
+                <strong>Whitelisted APIs</strong>:
+                <code>@frappe.whitelist</code> for authenticated access.
+              </li>
+              <li>
+                <strong>Validation</strong>: Of assignees based on roles and
+                department.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>User Interface</h2>
+            <h3>Layout:</h3>
+            <ul>
+              <li>
+                <strong>Task Creation Form</strong>: With assignee selection
+                modal.
+              </li>
+              <li>
+                <strong>Task Table</strong>: Displaying tasks with sortable
+                columns.
+              </li>
+              <li>
+                <strong>Navigation Tools</strong>: Filter modal and search bar
+                for task navigation.
+              </li>
+            </ul>
+
+            <h3>Interactivity:</h3>
+            <ul>
+              <li><strong>Dropdowns</strong>: For task response updates.</li>
+              <li>
+                <strong>Modals</strong>: For editing tasks and viewing full
+                descriptions.
+              </li>
+              <li>
+                <strong>“New” Badge</strong>: For unseen tasks assigned to the
+                user.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Implementation Details</h2>
+            <h3>Data Flow:</h3>
+            <ul>
+              <li>
+                <strong>Task Submission Flow</strong>: User submits task →
+                Frontend sends POST request → Backend validates and saves →
+                Email sent to assignee.
+              </li>
+              <li>
+                <strong>Live Updates</strong>: Task list updates via AJAX calls
+                to <code>get_todo_list</code>.
+              </li>
+            </ul>
+
+            <h3>Key Components:</h3>
+            <ul>
+              <li>
+                <strong>todo.html</strong>: Renders UI and handles client-side
+                logic.
+              </li>
+              <li>
+                <strong>todo.py</strong>: Manages server-side logic, role
+                checks, and notifications.
+              </li>
+            </ul>
+
+            <h3>Dependencies:</h3>
+            <ul>
+              <li>
+                <strong>Frappe Framework</strong>: For backend and frontend
+                utilities.
+              </li>
+              <li><strong>Bootstrap and jQuery</strong>: For UI components.</li>
+            </ul>
+
+            <h3>Challenges:</h3>
+            <ul>
+              <li>
+                <strong>Concurrency</strong>: Handling concurrent task updates
+                with retry logic.
+              </li>
+              <li>
+                <strong>Access Control</strong>: Ensuring role-based
+                restrictions for task assignments.
+              </li>
+              <li>
+                <strong>Scalability</strong>: Managing large task lists with
+                pagination.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Benefits and Impact</h2>
+            <ul>
+              <li>
+                <strong>Efficiency</strong>: Simplifies task delegation and
+                tracking across hierarchies.
+              </li>
+              <li>
+                <strong>User Experience</strong>: Intuitive UI with
+                role-specific views and notifications.
+              </li>
+              <li>
+                <strong>Accountability</strong>: Tracks task status and
+                responses, enhancing responsibility.
+              </li>
+              <li>
+                <strong>Scalability</strong>: Supports multiple users with
+                pagination and optimized queries.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Conclusion</h2>
+            <h3>Summary:</h3>
+            <p>
+              <strong>The ToDo GNDEC System</strong> is a secure, role-based
+              platform for efficient task management in education.
+            </p>
+
+            <h3>Key Takeaways:</h3>
+            <ul>
+              <li>
+                <strong>Seamless Task Management</strong>: Seamless task
+                assignment and tracking.
+              </li>
+              <li>
+                <strong>Access & Notifications</strong>: Robust role-based
+                access and notifications.
+              </li>
+              <li>
+                <strong>Scalability</strong>: Potential for scalability and
+                enhancements.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <img src="images/todo.png" width="700"  alt="todo">
+          </section>
+        </section>
+        <!-- Second end -->
+        <section data-background-color="#ff6f91"><h1>THANK YOU!</h1></section>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize();
+    </script>
+  </body>
+</html>
